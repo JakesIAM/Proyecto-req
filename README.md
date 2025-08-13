@@ -60,13 +60,6 @@ P: peso en kg
 
 h: horas desde la última bebida
 
-¿Quieres agregar más cosas?
-
-Puedo incluir:
-
-Factores adicionales (edad, salud del hígado)
-
-Unidad internacional vs imperial
 
 Botones de interacción (si vas a implementarlo en una web)
 
