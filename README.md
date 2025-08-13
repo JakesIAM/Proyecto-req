@@ -1,65 +1,95 @@
-# Proyecto-req
+Perfecto. Si el objetivo es un onepage técnico y visual sobre el cálculo del nivel de alcohol en sangre, y Mermaid no es necesario, entonces tenemos más libertad para usar herramientas más potentes y personalizables.
 
-Aquí tienes un ejemplo técnico, listo para pegar en un archivo .md compatible con Mermaid (como Obsidian, Notion, o un viewer online):
+✅ Alternativas Más Eficientes a Mermaid para un Onepage Técnico
 
-```mermaid
-flowchart TD
-    A[Inicio] --> B[Ingesta de alcohol<PE>(ml de bebida y % alcohol)]
-    B --> C[Calcular gramos de alcohol puro<br>Gramos = Volumen (ml) x Graduación (%) x 0.8]
-    C --> D[Seleccionar sexo de la persona]
-    D --> E{Sexo}
-    E -->|Hombre| F[Coeficiente de Widmark: 0.68]
-    E -->|Mujer| G[Coeficiente de Widmark: 0.55]
-    
-    F --> H[Peso corporal en kg]
-    G --> H
+Aquí te presento opciones más robustas y eficientes que Mermaid para tu caso:
 
-    H --> I[Calcular BAC inicial:<br>BAC = (Gramos de alcohol) / (Peso × Coeficiente) × 100]
-    I --> J[Horas desde la última bebida]
-    J --> K[Reducción por metabolismo:<br>0.015 × horas]
-    K --> L[Calcular BAC final:<br>BAC_final = BAC_inicial - reducción]
+Opción	¿Qué es?	Ventajas
+HTML + CSS + JS	Página estática hecha a mano	Control total sobre visual, interacción, fórmulas, diseño responsive
+Notion + FigJam/Figma	Documento estructurado + diagrama externo	Ideal para presentaciones o compartir online
+LaTeX (con TikZ o PGF)	Sistema de documentación científica	Profesional, preciso, excelente para fórmulas
+Docusaurus / MkDocs	Generadores de documentación técnica	Soporte para diagramas, Markdown, HTML y temas
+Canva / Whimsical / Figma	Herramientas visuales de diagramación	Muy visual, rápido, exportable como PNG o PDF
+Jupyter Notebook / Observable	Documentos interactivos con código	Si deseas cálculos reales y visualización dinámica
+💡 Recomendación: OnePage en HTML + CSS + JS
 
-    L --> M{Resultado BAC}
-    M -->|BAC < 0.03%| N[Bajo o sin efecto significativo]
-    M -->|0.03% ≤ BAC < 0.08%| O[Capacidad reducida (legal en muchos países)]
-    M -->|BAC ≥ 0.08%| P[Ilegal para conducir en muchos países]
-```
+Si quieres eficiencia, visual atractivo, y posibilidad de incluir fórmulas técnicas bien presentadas, una página HTML estática es probablemente lo mejor.
 
-📌 ¿Qué muestra el diagrama?
+Te permitiría:
 
-Este flujo representa el proceso típico para calcular el nivel de alcohol en sangre usando la fórmula de Widmark:
+Mostrar el flujo del cálculo paso a paso
 
-BAC
-=
-𝐴
-𝑟
-⋅
-𝑃
-×
-100
-−
-𝛽
-⋅
-ℎ
-BAC=
-r⋅P
-A
-	​
+Incluir fórmulas matemáticas con MathJax o KaTeX
 
-×100−β⋅h
+Permitir inputs para que el usuario calcule su BAC
 
-Donde:
+Mostrar tablas, advertencias, y resultados dinámicos
 
-A: gramos de alcohol consumido
+🧱 Estructura del OnePage (HTML)
 
-r: coeficiente de difusión (0.68 hombre, 0.55 mujer)
+Aquí va una estructura base que podrías usar:
 
-P: peso en kg
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cálculo de Nivel de Alcohol en Sangre</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+  <header>
+    <h1>Cálculo Técnico del Nivel de Alcohol en Sangre (BAC)</h1>
+    <p>Basado en la fórmula de Widmark</p>
+  </header>
 
-β (beta): tasa de eliminación (~0.015% por hora)
+  <section id="formula">
+    <h2>Fórmula General</h2>
+    <p>
+      $$ BAC = \frac{A}{r \cdot P} \cdot 100 - \beta \cdot h $$
+    </p>
+    <ul>
+      <li><strong>A</strong>: gramos de alcohol puro</li>
+      <li><strong>r</strong>: coeficiente de difusión (0.68 hombre, 0.55 mujer)</li>
+      <li><strong>P</strong>: peso corporal en kg</li>
+      <li><strong>β</strong>: tasa de eliminación (~0.015%/h)</li>
+      <li><strong>h</strong>: horas desde la última bebida</li>
+    </ul>
+  </section>
 
-h: horas desde la última bebida
+  <section id="proceso">
+    <h2>Proceso de Cálculo</h2>
+    <ol>
+      <li>Determinar volumen y tipo de bebida</li>
+      <li>Calcular gramos de alcohol: \( Volumen \times \% \text{ de alcohol} \times 0.8 \)</li>
+      <li>Aplicar fórmula con peso y coeficiente según sexo</li>
+      <li>Restar eliminación según tiempo</li>
+    </ol>
+  </section>
+
+  <section id="advertencia">
+    <h2>Notas Importantes</h2>
+    <p>Este cálculo es aproximado y no debe usarse como referencia médica o legal.</p>
+  </section>
+
+  <footer>
+    <p>OnePage BAC Calculator © 2025</p>
+  </footer>
+</body>
+</html>
 
 
-Botones de interacción (si vas a implementarlo en una web)
+Puedes expandir esto con CSS para el diseño, o JavaScript si quieres que sea interactivo (inputs para ingresar datos, botones, cálculo en vivo, etc.).
 
+✅ ¿Qué sigue?
+
+Dime qué prefieres:
+
+¿Quieres el onepage en HTML completo con diseño y lógica de cálculo?
+
+¿Prefieres algo más tipo PDF estático?
+
+¿O una solución online editable (tipo Notion + Figma)?
+
+Puedo generar directamente el archivo o plantilla según el camino que elijas.
