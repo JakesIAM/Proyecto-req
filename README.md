@@ -69,8 +69,16 @@ Aquí va una estructura base que podrías usar:
   </section>
 
   <section id="advertencia">
-    <h2>Notas Importantes</h2>
-    <p>Este cálculo es aproximado y no debe usarse como referencia médica o legal.</p>
+    <h2>Intenciones del onepage</h2>
+    <ol>
+    <li></li>Mostrar cuánto puedes beber antes de exceder el límite legal (0.08% en muchos países).</li>
+      
+    <li>Puede estar en una app móvil o sitio web como calculadora BAC.</li>
+
+    <li>Útil para mostrar en tiempo real cómo disminuye el BAC con el paso de las horas.</li>
+
+    <li> Podría incorporar advertencias personalizadas (ej. "No deberías conducir").</li>
+     </ol>
   </section>
 
   <footer>
@@ -82,14 +90,3 @@ Aquí va una estructura base que podrías usar:
 
 Puedes expandir esto con CSS para el diseño, o JavaScript si quieres que sea interactivo (inputs para ingresar datos, botones, cálculo en vivo, etc.).
 
-✅ ¿Qué sigue?
-
-Dime qué prefieres:
-
-¿Quieres el onepage en HTML completo con diseño y lógica de cálculo?
-
-¿Prefieres algo más tipo PDF estático?
-
-¿O una solución online editable (tipo Notion + Figma)?
-
-Puedo generar directamente el archivo o plantilla según el camino que elijas.
