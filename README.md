@@ -63,4 +63,3 @@ h: horas desde la última bebida
 
 Botones de interacción (si vas a implementarlo en una web)
 
-¿Quieres que lo exporte como PDF o HTML también?
